@@ -12,13 +12,13 @@ describe('application generator', () => {
     appTree = createTreeWithEmptyWorkspace();
   });
 
-  it.only('should run successfully', async () => {
+  it('should run successfully', async () => {
     await generator(appTree, options);
     const config = readProjectConfiguration(appTree, 'test');
     expect(config).toBeDefined();
   })
 
-  it.only('should use posix-style paths', async() => {
+  it('should use posix-style paths', async() => {
     await generator(appTree, options);
     const { targets } = readProjectConfiguration(appTree, 'test');
     expect(targets).toBeDefined();
